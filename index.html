@@ -2,141 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Midjourney Prompt Generator</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-      }
-
-      header {
-        background-color: #007bff;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        font-size: 36px;
-        margin: 0;
-      }
-
-      nav {
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      nav li {
-        margin: 0 10px;
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-
-      nav li:hover {
-        color: #007bff;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
-      }
-
-      .category {
-        margin: 10px;
-        padding: 10px;
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        flex-basis: 90%;
-        /*text-align: center;*/
-      }
-
-      .category h2 {
-        font-size: 24px;
-        margin: 0 0 10px;
-      }
-
-      .cj01 label {
-        /*display: block;*/
-
-        width: 150px;
-        height: 160px;
-        display: block;
-        float: left;
-      }
-      .cj01 img {
-        width: 140px;
-        height: 140px;
-      }
-      .category label {
-        display: block;
-        margin: 10px 10px 10px 10px;
-        float: left;
-      }
-      .category input[type="checkbox"] {
-        margin-right: 10px;
-      }
-
-      .btn {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px 20px;
-        font-size: 18px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-      }
-
-      .btn:hover {
-        background-color: #0062cc;
-      }
-
-      .prompt {
-        background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        margin-top: 20px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .prompt h2 {
-        font-size: 24px;
-        margin: 0 0 10px;
-      }
-
-      .prompt p {
-        font-size: 18px;
-        margin: 0;
-      }
-    </style>
+    <title>Midjourney 关键词</title>
+    <link type="text/css" rel="stylesheet" href="/css/main.css" />
+    <script src="/js/index.js"></script>
   </head>
   <body>
     <header>
-      <h1>Midjourney Prompt Generator</h1>
+      <h1>Midjourney 提示生成器</h1>
     </header>
 
     <div class="container">
@@ -157,39 +29,17 @@
           />飞跃云端</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Plateau"
-          />高原</label
+          ><input type="checkbox" name="scenes" value="Plateau" />高原</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Temple"
-          />寺庙</label
+          ><input type="checkbox" name="scenes" value="Temple" />寺庙</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Grassland"
-          />草原</label
+          ><input type="checkbox" name="scenes" value="Grassland" />草原</label
         >
+        <label><input type="checkbox" name="scenes" value="Cave" />洞穴</label>
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Cave"
-          />洞穴</label
-        >
-        <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Island"
-          />海岛</label
+          ><input type="checkbox" name="scenes" value="Island" />海岛</label
         >
         <label
           ><input
@@ -199,33 +49,15 @@
           />蛮荒之地</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Valley"
-          />山谷</label
+          ><input type="checkbox" name="scenes" value="Valley" />山谷</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Swamp"
-          />沼泽地</label
+          ><input type="checkbox" name="scenes" value="Swamp" />沼泽地</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Palace"
-          />宫殿</label
+          ><input type="checkbox" name="scenes" value="Palace" />宫殿</label
         >
-        <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Pool"
-          />水潭</label
-        >
+        <label><input type="checkbox" name="scenes" value="Pool" />水潭</label>
         <label
           ><input
             type="checkbox"
@@ -240,31 +72,14 @@
             value="Ancient battlefield"
           />古代战场</label
         >
+        <label> <input type="checkbox" name="scenes" value="Hall" />大厅</label>
         <label>
-          
-          <input type="checkbox" name="scenes" value="Hall" />大厅</label
-        >
-        <label>
-          <input
-            type="checkbox"
-            name="scenes"
-            value="Waterfall"
-          />瀑布</label
+          <input type="checkbox" name="scenes" value="Waterfall" />瀑布</label
         >
         <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Mechanism"
-          />机关</label
+          ><input type="checkbox" name="scenes" value="Mechanism" />机关</label
         >
-        <label
-          ><input
-            type="checkbox"
-            name="scenes"
-            value="Tribe"
-          />部落</label
-        >
+        <label><input type="checkbox" name="scenes" value="Tribe" />部落</label>
         <label
           ><input
             type="checkbox"
@@ -1000,63 +815,5 @@
         <p id="text-to-copy"></p>
       </div>
     </div>
-
-    <script>
-      const generatePromptButton = document.querySelector(".btn");
-      const promptOutput = document.querySelector(".prompt p");
-
-      generatePromptButton.addEventListener("click", () => {
-        const sceneCheckboxes = document.querySelectorAll(
-          'input[name="scenes"]:checked'
-        );
-        const styleCheckboxes = document.querySelectorAll(
-          'input[name="styles"]:checked'
-        );
-        const viewCheckboxes = document.querySelectorAll(
-          'input[name="views"]:checked'
-        );
-        const lightCheckboxes = document.querySelectorAll(
-          'input[name="lights"]:checked'
-        );
-        const cameraCheckboxes = document.querySelectorAll(
-          'input[name="cameras"]:checked'
-        );
-        const lenCheckboxes = document.querySelectorAll(
-          'input[name="lens"]:checked'
-        );
-
-        const scenes = getValuesFromCheckboxes(sceneCheckboxes);
-        const styles = getValuesFromCheckboxes(styleCheckboxes);
-        const views = getValuesFromCheckboxes(viewCheckboxes);
-        const lights = getValuesFromCheckboxes(lightCheckboxes);
-        const cameras = getValuesFromCheckboxes(cameraCheckboxes);
-        const lens = getValuesFromCheckboxes(lenCheckboxes);
-
-        const prompt = scenes
-          .concat(styles, views, lights, cameras, lens)
-          .join(",");
-        promptOutput.textContent = prompt;
-      });
-
-      function getValuesFromCheckboxes(checkboxes) {
-        const values = [];
-        checkboxes.forEach((checkbox) => {
-          values.push(checkbox.value);
-        });
-        return values;
-      }
-
-      function copyToClipboard() {
-        const textToCopy = document.querySelector("#text-to-copy").innerText;
-        navigator.clipboard
-          .writeText(textToCopy)
-          .then(() => {
-            alert(`已复制到剪贴板：${textToCopy}`);
-          })
-          .catch((error) => {
-            alert(`复制失败：${error}`);
-          });
-      }
-    </script>
   </body>
 </html>
