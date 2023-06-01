@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>3D盒子</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      canvas {
+        width: 100px;
+        height: 0px;
+        display: block;
+      }
+      .button {
+        width: 120px;
+        height: 60px;
+        border: none;
+        border-radius: 10px;
+        background-color: #111;
+        color: white;
+        font-size: 20px;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+      }
+      .button:hover {
+        background-color: #000;
+      }
+      .button:active {
+        background-color: #000;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <canvas id="canvas"></canvas>
+
+      <button
+        class="button"
+        onclick="resetObject()"
+        style="position: absolute; top: 100px; left: 60px"
+      >
+        恢复默认
+      </button>
+    </div>
+
+    <script>
+      // 创建场景
+      var scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x006633);
+
+      // 创建相机
+      var camera = new THREE.PerspectiveCamera(
+        45,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+
+      //111
+      camera.position.set(3, 2, 5);
+      //camera.rotation.set(0, 0, Math.PI / 4);
+      camera.lookAt(scene.position);
+
+      // 创建渲染器
+      var renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // 创建几何体
+      var geometry = new THREE.BoxGeometry(1, 1, 1);
+
+      // 创建材质
+      var material = new THREE.MeshPhongMaterial({ color: 0xeeeeee });
+
+      // 创建网格对象
+      var cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      // 创建点光源
+      var light = new THREE.PointLight(0xffffff, 1, 100);
+      light.position.set(1, 1, 2);
+      scene.add(light);
+
+      // 添加全局光源
+      var ambientLight = new THREE.AmbientLight(0xeeeeee, 0.5);
+      scene.add(ambientLight);
+
+      // 添加事件监听器
+      var mouseDown = false;
+      var mouseX = 0,
+        mouseY = 0;
+      document.addEventListener(
+        "mousedown",
+        function (event) {
+          mouseDown = true;
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+        },
+        false
+      );
+      document.addEventListener(
+        "mouseup",
+        function () {
+          mouseDown = false;
+        },
+        false
+      );
+      document.addEventListener(
+        "mousemove",
+        function (event) {
+          if (mouseDown) {
+            var deltaX = event.clientX - mouseX;
+            var deltaY = event.clientY - mouseY;
+            cube.rotation.x += deltaY * 0.01;
+            cube.rotation.y += deltaX * 0.01;
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+          }
+        },
+        false
+      );
+
+      // 渲染循环
+      function render() {
+        requestAnimationFrame(render);
+        renderer.render(scene, camera);
+      }
+      render();
+
+      function resetObject() {
+        // 重置物体的位置和角度
+
+        cube.rotation.set(0, 0, 0);
+      }
+    </script>
+  </body>
+</html>
